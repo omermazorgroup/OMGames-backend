@@ -12,7 +12,7 @@ const app = express();
 
 // 1uzEfuAi98IlKcEu
 //https://www.twilio.com/docs/whatsapp/tutorial/connect-number-business-profile
-mongoose.connect('mongodb+srv://omermazorgroup:QXlBGgzaskMIjL2l@cluster0.pzt0d.mongodb.net/Snake?retryWrites=true&w=majority', {useNewUrlParser : true, useUnifiedTopology: true}).then(() => {
+mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser : true, useUnifiedTopology: true}).then(() => {
 
   console.log('server is connected to mongoDB');
 
