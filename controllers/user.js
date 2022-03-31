@@ -32,7 +32,7 @@ exports.checkEmail = async (req, res, next) => {
     secure: true,
     auth: {
       user: "omermazorgroup@gmail.com",
-      pass: 'sdeuchbhqwuzorxv'
+      pass: process.env.EMAIL_PASSWORD
     }
   });
   random = Math.floor(Math.random() * 100000);
@@ -125,7 +125,7 @@ exports.userLogin = (req, res, next) => {
       });
     };
     if(user && isMatch){
-    const token = jwt.sign({email: fetchedUser.email, userId: fetchedUser._id}, "secret_this_should_be_longer",
+    const token = jwt.sign({email: fetchedUser.email, userId: fetchedUser._id}, process.env.JWT_SECRET,
     {expiresIn: "1h" });
     fetchedUser.email = undefined;
     fetchedUser.password = undefined;
