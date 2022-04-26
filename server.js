@@ -5,7 +5,7 @@ const http = require("http");
 const cors = require("cors");
 var corsOptions = {
   origin: "https://omgames.vercel.app",
-  // origin: "http://localhost:4200",
+  //dev: origin: "http://localhost:4200",
   optionsSuccessStatus: 200,
 }
 app.use(cors(corsOptions));
